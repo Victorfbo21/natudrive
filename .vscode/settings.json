@@ -1,0 +1,17 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/__pycache__": true,
+        "**/Include": true,
+        "**/Lib": true,
+        "**/Scripts": true,
+        "**/.idea": true,
+        "**/.pytest_cache": true
+    },
+    "python.pythonPath": "c:\\Users\\mdim_\\OneDrive\\Documentos\\Projetos\\api-refatorada\\venv\\Scripts\\python.exe"
+}

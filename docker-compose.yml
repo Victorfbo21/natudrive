@@ -1,14 +1,14 @@
 version: "3.9"
 
 services:
-  db:
+  postgres:
     image: postgres:15
     container_name: postgres_db
     restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123mudar
-      POSTGRES_DB: mydatabase
+      POSTGRES_DB: natudrivedb
     ports:
       - "5432:5432"
     volumes:
