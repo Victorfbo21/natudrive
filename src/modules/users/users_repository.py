@@ -1,6 +1,7 @@
 
+from sqlalchemy.ext.asyncio import AsyncSession
 
 class UsersRepository:
     
-    def __init__(self):
-        pass
+    def __init__(self, db_session: AsyncSession):
+        self.db_session = db_session
