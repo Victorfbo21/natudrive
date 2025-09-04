@@ -10,7 +10,7 @@ from alembic import context
 
 from src.database.connection import Base
 
-from src.modules.users.models import Users
+from src.database.models import *
 
 load_dotenv()
 

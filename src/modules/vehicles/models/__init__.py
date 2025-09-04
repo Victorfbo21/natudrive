@@ -1,0 +1,1 @@
+from .vehicles_model import Vehicle
