@@ -1,6 +1,12 @@
 import uuid
 from enum import Enum
-from sqlalchemy import  Column, UUID, String, Integer, DateTime, Boolean, Enum as SqlEnum
+from sqlalchemy import  (
+    Column, UUID, String, Integer, 
+    DateTime, Boolean, Enum as SqlEnum,
+    ForeignKey
+)
+from sqlalchemy.sql import func
+
 from src.database.connection import Base
 
 class FuelType(str, Enum):
@@ -35,7 +41,10 @@ class Vehicle(Base):
     odometer = Column(Integer, default=0)
     status = Column(SqlEnum(VehicleStatus), default=VehicleStatus.AVAILABLE)
     is_active = Column(Boolean, default=True)
-
     license_expiration = Column(DateTime)
     inspection_expiration = Column(DateTime, nullable=True)
     insurance_expiration = Column(DateTime, nullable=True)
+    updated_at = Column(DateTime, nullable=True)
+    updated_by = Column(UUID, ForeignKey('natudrive.users.id'), nullable=True)
+    created_at = Column(DateTime, default=func.now(), nullable=False)
+    created_by = Column(UUID, ForeignKey('natudrive.users.id'), nullable=False)
