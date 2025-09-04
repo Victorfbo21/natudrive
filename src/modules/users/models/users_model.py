@@ -1,5 +1,6 @@
 from src.database.connection import Base
 from sqlalchemy import Column, String, DateTime, Boolean, Enum as SqlEnum, ForeignKey, UUID
+from sqlalchemy.orm import relationship
 import uuid
 from enum import Enum
 from sqlalchemy.sql import func
@@ -24,3 +25,5 @@ class Users(Base):
     updated_by = Column(UUID, ForeignKey("natudrive.users.id"), nullable=True)
     created_at = Column(DateTime, default=func.now())
     created_by = Column(UUID, ForeignKey("natudrive.users.id"), nullable=False)
+
+    driver_profile = relationship("Driver", uselist=False, back_populates="user")

@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  postgres:
+  postgres_natudrive:
     image: postgres:15
     container_name: postgres_db
     restart: always
